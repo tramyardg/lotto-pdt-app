@@ -12,13 +12,13 @@ import Endpoints from "@/constants/Endpoints";
 import LottoNumbers from "@/components/LottoNumbers";
 import { getDayAndDate } from "@/utils/dateUtils";
 
-export default function TabOneScreen() {
-  const LOTTO_LOGO = "../../assets/images/lotto649.png";
-  const LOTTO_TITLE = "Lotto 6/49*";
+export default function TabTwoScreen() {
+  const LOTTO_LOGO = "../../assets/images/lottomax.png";
+  const LOTTO_TITLE = "Lotto Max*";
   const LOTTO_ENDPOINT_TEST = Endpoints.test.lotto649;
-  const LOTTO_ENDPOINT_PROD = Endpoints.lotto649.prediction;
+  const LOTTO_ENDPOINT_PROD = Endpoints.lottomax.prediction;
 
-  const CIRCLE_BG_COLOR: string = Colors.numberBgColor.lotto649;
+  const CIRCLE_BG_COLOR: string = Colors.numberBgColor.lottoMax;
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,7 +39,7 @@ export default function TabOneScreen() {
         const parsedData = response.data
           .trim()
           .split("\n")
-          .map((line) => {
+          .map((line: string) => {
             const [date, set1, set2, set3] = line.split(",");
             return {
               date,
@@ -87,9 +87,23 @@ export default function TabOneScreen() {
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
+            paddingLeft: 10,
           }}
-        ></View>
+        >
+          {/* <Image source={require(LOTTO_LOGO)} /> */}
+        </View>
 
+        <View
+          style={{
+            flexDirection: "row",
+            marginBottom: 10,
+          }}
+        >
+          <Text>{drawDate[0]}</Text>
+          <Text style={{ fontWeight: "bold", marginLeft: "auto" }}>
+            {drawDate[1]}
+          </Text>
+        </View>
         <View
           style={{
             flexDirection: "row",
@@ -103,18 +117,6 @@ export default function TabOneScreen() {
               source={require("../../assets/images/reload.png")}
             />
           </TouchableOpacity>
-        </View>
-
-        <View
-          style={{
-            flexDirection: "row",
-            marginBottom: 10,
-          }}
-        >
-          <Text>{drawDate[0]}</Text>
-          <Text style={{ fontWeight: "bold", marginLeft: "auto" }}>
-            {drawDate[1]}
-          </Text>
         </View>
 
         {selectedLotto &&

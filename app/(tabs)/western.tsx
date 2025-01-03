@@ -4,6 +4,7 @@ import {
   ActivityIndicator,
   Image,
 } from "react-native";
+
 import { Text, View } from "@/components/Themed";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -12,13 +13,13 @@ import Endpoints from "@/constants/Endpoints";
 import LottoNumbers from "@/components/LottoNumbers";
 import { getDayAndDate } from "@/utils/dateUtils";
 
-export default function TabOneScreen() {
-  const LOTTO_LOGO = "../../assets/images/lotto649.png";
-  const LOTTO_TITLE = "Lotto 6/49*";
+export default function TabThreeScreen() {
+  const LOTTO_LOGO = "../../assets/images/logo_w649.webp";
+  const LOTTO_TITLE = "Western 649*";
   const LOTTO_ENDPOINT_TEST = Endpoints.test.lotto649;
-  const LOTTO_ENDPOINT_PROD = Endpoints.lotto649.prediction;
+  const LOTTO_ENDPOINT_PROD = Endpoints.lottomax.prediction;
 
-  const CIRCLE_BG_COLOR: string = Colors.numberBgColor.lotto649;
+  const CIRCLE_BG_COLOR: string = Colors.numberBgColor.lottoWestern649;
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -87,9 +88,11 @@ export default function TabOneScreen() {
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
+            paddingLeft: 10,
           }}
-        ></View>
-
+        >
+          {/* <Image source={require(LOTTO_LOGO)} /> */}
+        </View>
         <View
           style={{
             flexDirection: "row",
