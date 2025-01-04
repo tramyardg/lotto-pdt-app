@@ -1,37 +1,22 @@
 import { StatusBar } from "expo-status-bar";
-import { Platform, StyleSheet } from "react-native";
+import { Platform } from "react-native";
 
 import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
 import Endpoints from "@/constants/Endpoints";
+import resultsStyles from "@/styles/results";
 
 export default function ModalScreen() {
   const RESULTS_ENDPOINT = Endpoints.lottomax.result;
   const LOTTO_TITLE = "Lotto Max";
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Previous Draw Results</Text>
-      <Text style={styles.title}>{LOTTO_TITLE}</Text>
+    <View style={resultsStyles.container}>
+      <Text style={resultsStyles.title}>Previous Draw Results</Text>
+      <Text style={resultsStyles.title}>{LOTTO_TITLE}</Text>
       <EditScreenInfo resultsEndpoint={RESULTS_ENDPOINT} />
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 0,
-    height: 1,
-    width: "80%",
-  },
-});

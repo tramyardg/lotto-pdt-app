@@ -1,5 +1,4 @@
 import {
-  StyleSheet,
   TouchableOpacity,
   ActivityIndicator,
   Image,
@@ -10,11 +9,14 @@ import axios from "axios";
 import Colors from "@/constants/Colors";
 import Endpoints from "@/constants/Endpoints";
 import LottoNumbers from "@/components/LottoNumbers";
+import stylesBox from "@/styles/stylesBox";
+import singleStyles from "@/styles/single";
+
 import { getDayAndDate } from "@/utils/dateUtils";
 
 export default function TabOneScreen() {
   const LOTTO_LOGO = "../../assets/images/lotto649.png";
-  const LOTTO_TITLE = "Lotto 6/49*";
+  const LOTTO_TITLE = "Québec Lotto 6/49*";
   const LOTTO_ENDPOINT_TEST = Endpoints.test.lotto649;
   const LOTTO_ENDPOINT_PROD = Endpoints.lotto649.prediction;
 
@@ -73,14 +75,14 @@ export default function TabOneScreen() {
 
   if (loading) {
     return (
-      <View style={csvStyles.loader}>
+      <View style={singleStyles.loader}>
         <ActivityIndicator size="large" color={CIRCLE_BG_COLOR} />
       </View>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <View style={singleStyles.container}>
       <View style={stylesBox.container}>
         <View
           style={{
@@ -96,7 +98,7 @@ export default function TabOneScreen() {
             justifyContent: "space-between",
           }}
         >
-          <Text style={styles.title}>{LOTTO_TITLE}</Text>
+          <Text style={singleStyles.title}>{LOTTO_TITLE}</Text>
           <TouchableOpacity onPress={selectRandomLotto}>
             <Image
               style={{ width: 24, height: 24 }}
@@ -145,44 +147,3 @@ export default function TabOneScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 10,
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-});
-
-const stylesBox = StyleSheet.create({
-  container: {
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    padding: 15,
-    shadowColor: "#000", // Shadow color (iOS)
-    shadowOffset: { width: 0, height: 2 }, // Shadow offset (iOS)
-    shadowOpacity: 0.25, // Shadow opacity (iOS)
-    shadowRadius: 4, // Shadow radius (iOS)
-    elevation: 5, // Shadow (Android)
-    borderWidth: 1,
-    borderColor: "#ddd", // Border color
-  },
-});
-
-const csvStyles = StyleSheet.create({
-  loader: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
