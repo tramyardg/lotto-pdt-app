@@ -8,7 +8,7 @@ import resultsStyles from "@/styles/results";
 
 export default function ModalScreen() {
   const RESULTS_ENDPOINT = Endpoints.lotto649.result;
-  const LOTTO_TITLE = "Lotto 6/49";
+  const LOTTO_TITLE = "Québec Lotto 6/49";
 
   return (
     <View style={resultsStyles.container}>

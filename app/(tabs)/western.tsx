@@ -18,7 +18,7 @@ export default function TabThreeScreen() {
   const LOTTO_LOGO = "../../assets/images/logo_w649.webp";
   const LOTTO_TITLE = "Western 649*";
   const LOTTO_ENDPOINT_TEST = Endpoints.test.lotto649;
-  const LOTTO_ENDPOINT_PROD = Endpoints.lottomax.prediction;
+  const LOTTO_ENDPOINT_PROD = Endpoints.western.prediction;
 
   const CIRCLE_BG_COLOR: string = Colors.numberBgColor.lottoWestern649;
 
