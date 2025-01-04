@@ -16,7 +16,7 @@ import { getDayAndDate } from "@/utils/dateUtils";
 
 export default function TabThreeScreen() {
   const LOTTO_LOGO = "../../assets/images/logo_w649.webp";
-  const LOTTO_TITLE = "Lotto Western 649*";
+  const LOTTO_TITLE = "Western 649*";
   const LOTTO_ENDPOINT_TEST = Endpoints.test.lotto649;
   const LOTTO_ENDPOINT_PROD = Endpoints.lottomax.prediction;
 
@@ -100,10 +100,13 @@ export default function TabThreeScreen() {
             justifyContent: "space-between",
           }}
         >
-          <Text style={singleStyles.title}>{LOTTO_TITLE}</Text>
+          <View style={{marginBottom: 10}}>
+            <Text style={singleStyles.title}>Lotto</Text>
+            <Text style={singleStyles.title}>{LOTTO_TITLE}</Text>
+          </View>
           <TouchableOpacity onPress={selectRandomLotto}>
             <Image
-              style={{ width: 24, height: 24 }}
+              style={{ width: 50, height: 50 }}
               source={require("../../assets/images/reload.png")}
             />
           </TouchableOpacity>
@@ -131,14 +134,7 @@ export default function TabThreeScreen() {
           ))}
       </View>
       <View style={{ marginTop: 25, padding: 25 }}>
-        <Text
-          style={{
-            fontSize: 6,
-            fontStyle: "normal",
-            textAlign: "center",
-            lineHeight: 8,
-          }}
-        >
+        <Text style={singleStyles.disclaimer}>
           *Disclaimer: The predictions displayed here are based on patterns
           identified from previous winning numbers. These predictions do not
           guarantee a win and should be viewed as statistical forecasts rather

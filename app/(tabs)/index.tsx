@@ -16,7 +16,7 @@ import { getDayAndDate } from "@/utils/dateUtils";
 
 export default function TabOneScreen() {
   const LOTTO_LOGO = "../../assets/images/lotto649.png";
-  const LOTTO_TITLE = "Québec Lotto 6/49*";
+  const LOTTO_TITLE = "Lotto 6/49*";
   const LOTTO_ENDPOINT_TEST = Endpoints.test.lotto649;
   const LOTTO_ENDPOINT_PROD = Endpoints.lotto649.prediction;
 
@@ -98,10 +98,13 @@ export default function TabOneScreen() {
             justifyContent: "space-between",
           }}
         >
-          <Text style={singleStyles.title}>{LOTTO_TITLE}</Text>
+          <View style={{marginBottom: 10}}>
+            <Text style={singleStyles.title}>Québec</Text>
+            <Text style={singleStyles.title}>{LOTTO_TITLE}</Text>
+          </View>
           <TouchableOpacity onPress={selectRandomLotto}>
             <Image
-              style={{ width: 24, height: 24 }}
+              style={{ width: 48, height: 48 }}
               source={require("../../assets/images/reload.png")}
             />
           </TouchableOpacity>
@@ -129,14 +132,7 @@ export default function TabOneScreen() {
           ))}
       </View>
       <View style={{ marginTop: 25, padding: 25 }}>
-        <Text
-          style={{
-            fontSize: 6,
-            fontStyle: "normal",
-            textAlign: "center",
-            lineHeight: 8,
-          }}
-        >
+        <Text style={singleStyles.disclaimer}>
           *Disclaimer: The predictions displayed here are based on patterns
           identified from previous winning numbers. These predictions do not
           guarantee a win and should be viewed as statistical forecasts rather

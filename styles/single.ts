@@ -9,7 +9,6 @@ const singleStyles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 10,
   },
   separator: {
     marginVertical: 30,
@@ -21,6 +20,13 @@ const singleStyles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  disclaimer: {
+    fontSize: 6,
+    fontStyle: "normal",
+    textAlign: "center",
+    lineHeight: 8,
+    color: "#000000"
+  }
 });
 
 export default singleStyles;
