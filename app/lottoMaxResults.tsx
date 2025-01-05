@@ -1,3 +1,4 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { Platform } from "react-native";
 
@@ -12,7 +13,7 @@ export default function ModalScreen() {
 
   return (
     <View style={resultsStyles.container}>
-      <Text style={resultsStyles.title}>Previous Draw Results</Text>
+      <Text style={resultsStyles.title}>Previous Draw Results*</Text>
       <Text style={resultsStyles.title}>{LOTTO_TITLE}</Text>
       <EditScreenInfo resultsEndpoint={RESULTS_ENDPOINT} />
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
