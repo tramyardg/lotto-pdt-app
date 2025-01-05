@@ -21,7 +21,7 @@ const singleStyles = StyleSheet.create({
     alignItems: "center",
   },
   disclaimer: {
-    fontSize: 6,
+    fontSize: 8,
     fontStyle: "normal",
     textAlign: "center",
     lineHeight: 8,
