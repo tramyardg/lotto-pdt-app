@@ -80,6 +80,10 @@ export default function EditScreenInfo({
           <Text style={resultsStyles.cell}>{result.prize}</Text>
         </View>
       ))}
+      <View style={{marginTop: 25}}>
+        <Text style={{fontSize: 8}}>Notice:</Text>
+        <Text style={{fontSize: 8}}>*This tool helps you check if your numbers may match a winning selection. However, it may contain errors or discrepancies. Please consult Loto-Québec's official winning list to confirm your results.</Text>
+      </View>
     </>
   );
 }
